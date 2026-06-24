@@ -163,8 +163,8 @@ mvn clean test -Denv=prod
 
 ### Login
 
-- Login com credenciais válidas
-- Validação de acesso ao Dashboard
+- Autenticação com credenciais válidas
+- Validação da exibição da tela inicial com título "Dashboard"
 
 ---
 
@@ -207,15 +207,15 @@ mvn clean test -Denv=prod
 
 ## Autor
 
-### Elói Silvestre
+### Elói Silvestre Coelho
 
 QA Lead | QA Automation | Quality Engineering
 
 Especialista em Qualidade de Software, Automação de Testes, Estratégia de Testes e Governança de QA.
 
-**LinkedIn:** inserir seu link
+**LinkedIn:** [(https://www.linkedin.com/in/eloi-silvestre)]
 
-**GitHub:** inserir seu GitHub
+**GitHub:** [(https://github.com/esilvesc-star)]
 
 ---
 
