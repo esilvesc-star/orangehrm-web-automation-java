@@ -15,7 +15,3 @@ allure-report/
 # Logs
 *.log
 
-target/
-.vscode/
-allure-results/
-allure-report/
