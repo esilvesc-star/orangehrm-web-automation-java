@@ -5,6 +5,10 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import utils.ConfigReader;
 import utils.DriverManager;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.io.ByteArrayInputStream;
 
 public class Hooks {
 
@@ -34,13 +38,23 @@ public class Hooks {
      * - Exibir no console o status do cenário
      * - Fechar o navegador
      */
-    @After
-    public void afterScenario(Scenario scenario) {
+   @After
+public void afterScenario(Scenario scenario) {
 
-        System.out.println("\n--- FINALIZANDO CENÁRIO ---");
-        System.out.println(scenario.getName());
-        System.out.println("Status: " + scenario.getStatus());
+    System.out.println("\n--- FINALIZANDO CENÁRIO ---");
+    System.out.println(scenario.getName());
+    System.out.println("Status: " + scenario.getStatus());
 
-        DriverManager.quitDriver();
+    if (scenario.isFailed()) {
+        byte[] screenshot = ((TakesScreenshot) DriverManager.getDriver())
+                .getScreenshotAs(OutputType.BYTES);
+
+        Allure.addAttachment(
+                "Evidência da falha",
+                new ByteArrayInputStream(screenshot)
+        );
     }
+
+    DriverManager.quitDriver();
+}
 }

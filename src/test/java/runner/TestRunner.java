@@ -11,7 +11,8 @@ import io.cucumber.junit.CucumberOptions;
         glue = "steps",
         tags = "@smoke",
         plugin = {
-                "pretty"
+                "pretty",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         }
 )
 public class TestRunner {
