@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import components.LoginComponent;
 import utils.WaitUtils;
-import org.junit.Assert;
+
 
 public class LoginPage {
 
@@ -30,13 +30,12 @@ public void clicarLogin() {
 
 }
 
-public void validarDashboard() {
+public boolean telaInicialFoiExibida() {
 
-    waitUtils.aguardarElementoVisivel(loginComponent.tituloDashboardHomePage);
-  
-    Assert.assertTrue(
-        "Dashboard não foi exibido.",
-        loginComponent.tituloDashboardHomePage.isDisplayed());
+    waitUtils.aguardarElementoVisivel(
+            loginComponent.tituloDashboardHomePage);
+
+    return loginComponent.tituloDashboardHomePage.isDisplayed();
 }
 
 }

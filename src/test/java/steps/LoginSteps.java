@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import pages.LoginPage;
 import utils.ConfigReader;
 import utils.DriverManager;
+import org.junit.Assert;
 
 public class LoginSteps {
 
@@ -24,9 +25,11 @@ public class LoginSteps {
         loginPage.clicarLogin();
     }
 
-    @Then("devo ser redirecionado para o Dashboard")
-    public void devo_ser_redirecionado_para_o_dashboard() {
-        loginPage.validarDashboard();
-        
-    }
+    @Then("devo ser redirecionado para a tela inicial")
+    public void devo_ser_redirecionado_para_a_tela_inicial() {
+
+    Assert.assertTrue(
+            "Tela inicial não foi exibida.",
+            loginPage.telaInicialFoiExibida());
+}
 }

@@ -8,5 +8,5 @@ Feature: Login
 
     Given que estou na página de login do OrangeHRM
     When realizo login com credenciais válidas
-    Then devo ser redirecionado para o Dashboard
+    Then devo ser redirecionado para a tela inicial
 
