@@ -213,9 +213,9 @@ QA Lead | QA Automation | Quality Engineering
 
 Especialista em Qualidade de Software, Automação de Testes, Estratégia de Testes e Governança de QA.
 
-**LinkedIn:** [(https://www.linkedin.com/in/eloi-silvestre)]
+**LinkedIn:** https://www.linkedin.com/in/eloi-silvestre
 
-**GitHub:** [(https://github.com/esilvesc-star)]
+**GitHub:** https://github.com/esilvesc-star
 
 ---
 
