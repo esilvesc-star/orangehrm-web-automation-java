@@ -1,48 +1,52 @@
 # OrangeHRM Web Automation Framework
 
-Framework de automação de testes Web desenvolvido com foco em boas práticas de automação, organização de código, manutenibilidade e escalabilidade.
+![Java](https://img.shields.io/badge/Java-11-orange)
+![Selenium](https://img.shields.io/badge/Selenium-4.x-brightgreen)
+![Cucumber](https://img.shields.io/badge/Cucumber-BDD-23D96C)
+![Maven](https://img.shields.io/badge/Maven-3.x-C71A36)
+![Allure](https://img.shields.io/badge/Allure-Report-blueviolet)
+![GitHub Actions](https://img.shields.io/badge/CI-GitHub_Actions-success)
 
-O projeto utiliza Selenium WebDriver, Java, Cucumber BDD, Maven e Allure Report, seguindo os padrões Page Object Model (POM) e Component Object Model para promover reutilização, legibilidade e separação de responsabilidades.
-
----
-
-## Objetivo
-
-Este projeto foi desenvolvido com o objetivo de demonstrar uma estrutura profissional de automação de testes Web baseada em:
-
-- Selenium WebDriver
-- Java
-- Cucumber BDD
-- Maven
-- Allure Report
-- Page Object Model (POM)
-- Component Object Model
-- Page Factory
-- Gerenciamento de ambientes
-- Esperas explícitas (Explicit Waits)
-- Captura de evidências em falha
-
-Além de servir como laboratório de estudos e evolução contínua em automação de testes.
+> Framework de automação de testes Web desenvolvido para demonstrar uma arquitetura profissional utilizando **Selenium WebDriver**, **Java**, **Cucumber BDD**, **Maven**, **Allure Report** e **GitHub Actions**, seguindo boas práticas de organização, reutilização de código e escalabilidade.
 
 ---
 
-## Tecnologias Utilizadas
+# Objetivo
 
-| Tecnologia | Versão |
-|------------|--------|
-| Java | 11 |
-| Selenium WebDriver | 4.x |
-| Cucumber | 7.x |
-| JUnit | 4 |
-| Maven | 3.x |
-| WebDriverManager | 5.x |
-| Allure Report | 2.x |
+Este projeto foi desenvolvido como laboratório de estudos e portfólio profissional para demonstrar a implementação de um framework moderno de automação Web baseado em:
+
+* Selenium WebDriver
+* Java
+* Cucumber BDD
+* Maven
+* Allure Report
+* GitHub Actions (CI)
+* GitHub Pages
+* Page Object Model (POM)
+* Component Object Model
+* Page Factory
+* Gerenciamento de ambientes
+* Explicit Waits
+* Captura automática de evidências em falha
 
 ---
 
-## Arquitetura do Projeto
+# Tecnologias
 
-O framework foi estruturado seguindo princípios de separação de responsabilidades.
+| Tecnologia         | Versão |
+| ------------------ | ------ |
+| Java               | 11     |
+| Selenium WebDriver | 4.x    |
+| Cucumber           | 7.x    |
+| JUnit              | 4      |
+| Maven              | 3.x    |
+| WebDriverManager   | 5.x    |
+| Allure Report      | 2.x    |
+| GitHub Actions     | CI/CD  |
+
+---
+
+# Arquitetura
 
 ```text
 src
@@ -63,79 +67,101 @@ src
         └── allure.properties
 ```
 
-### Browser
+## Fluxo da Arquitetura
 
-Responsável pela criação e configuração dos navegadores suportados pela automação.
+```text
+Feature (BDD)
 
-### Components
+        ↓
 
-Centraliza o mapeamento dos elementos da interface utilizando Page Factory.
+Steps (Cucumber)
 
-Exemplo:
+        ↓
 
-- Campos
-- Botões
-- Tabelas
-- Menus
-- Componentes reutilizáveis
+Pages
 
-### Pages
+        ↓
 
-Responsável pelas ações e comportamentos das telas.
+Components
 
-Exemplos:
+        ↓
 
-- Realizar login
-- Navegar entre páginas
-- Consultar informações exibidas na tela
-- Executar ações de negócio
+WebDriver
 
-### Steps
+        ↓
 
-Camada responsável por conectar os cenários escritos em Gherkin com as ações implementadas nas Pages.
-
-### Hooks
-
-Responsável pela preparação e finalização da execução dos cenários.
-
-Atualmente:
-
-- Inicialização do navegador antes de cada cenário
-- Encerramento do navegador após cada cenário
-- Captura de screenshot em caso de falha
-- Anexo automático da evidência no relatório Allure
-
-### Runner
-
-Configuração da execução dos testes Cucumber, incluindo features, steps, tags e plugins de relatório.
-
-### Utils
-
-Classes utilitárias reutilizáveis por todo o framework.
-
-Atualmente:
-
-#### ConfigReader
-
-Responsável pela leitura das configurações dos ambientes.
-
-#### DriverManager
-
-Responsável pelo gerenciamento do ciclo de vida do WebDriver.
-
-#### WaitUtils
-
-Centraliza estratégias de sincronização utilizando Explicit Wait.
-
-### Features
-
-Contém os cenários BDD escritos em Gherkin.
+Browser
+```
 
 ---
 
-## Gerenciamento de Ambientes
+# Organização do Framework
 
-O framework suporta múltiplos ambientes através de arquivos de propriedades específicos.
+## Browser
+
+Responsável pela criação e configuração dos navegadores suportados pelo framework.
+
+---
+
+## Components
+
+Centraliza o mapeamento dos elementos da interface utilizando **Page Factory**, promovendo reutilização e reduzindo duplicação de código.
+
+---
+
+## Pages
+
+Implementa as ações e comportamentos de cada tela da aplicação.
+
+Exemplos:
+
+* Login
+* Navegação
+* Validações
+* Regras de negócio
+
+---
+
+## Steps
+
+Responsável por conectar os cenários escritos em Gherkin às implementações das Pages.
+
+---
+
+## Hooks
+
+Executa ações antes e depois de cada cenário.
+
+Atualmente realiza:
+
+* Inicialização do navegador
+* Encerramento do navegador
+* Captura automática de screenshot em falha
+* Anexo da evidência ao relatório Allure
+
+---
+
+## Runner
+
+Configuração da execução dos testes Cucumber.
+
+---
+
+## Utils
+
+Centraliza componentes reutilizáveis do framework.
+
+Atualmente:
+
+* ConfigReader
+* DriverManager
+* WaitUtils
+
+---
+
+# Gerenciamento de Ambientes
+
+O framework suporta múltiplos ambientes através dos arquivos:
 
 ```text
 application-qa.properties
@@ -143,7 +169,7 @@ application-uat.properties
 application-prod.properties
 ```
 
-A seleção do ambiente é realizada através da propriedade:
+Execução:
 
 ```bash
 mvn clean test -Denv=qa
@@ -159,60 +185,78 @@ mvn clean test -Denv=prod
 
 ---
 
-## Relatórios e Evidências
+# Relatórios
 
-O projeto possui integração com Allure Report.
-
-Durante a execução dos testes, os resultados são gerados na pasta:
+O framework gera automaticamente os resultados na pasta:
 
 ```text
 allure-results
 ```
 
-Para visualizar o relatório localmente:
+Visualização local:
 
 ```bash
 allure serve allure-results
 ```
 
-O framework também realiza captura de screenshot automaticamente em caso de falha e anexa a evidência ao relatório Allure.
+Além disso:
+
+* Captura screenshot automaticamente em falhas
+* Anexa evidências ao Allure Report
+* Publica o relatório automaticamente via GitHub Pages
 
 ---
 
-## Boas Práticas Aplicadas
+# Integração Contínua (CI)
 
-- Page Object Model (POM)
-- Component Object Model
-- Separação de responsabilidades
-- Centralização de locators
-- Configuração por ambiente
-- Reutilização de componentes
-- Explicit Waits centralizados
-- Evidência automática em falha
-- Relatório Allure integrado
-- Estrutura preparada para escalabilidade
-- Código orientado à manutenção
+O projeto possui pipeline automatizada utilizando **GitHub Actions**.
 
----
+A cada Push:
 
-## Cenários Automatizados
-
-### Login
-
-- Autenticação com credenciais válidas
-- Validação da exibição da tela inicial com título "Dashboard"
+* Checkout do código
+* Configuração do Java
+* Cache Maven
+* Execução dos testes
+* Geração do relatório Allure
+* Publicação automática do relatório no GitHub Pages
 
 ---
 
-## Como Executar
+# Boas Práticas Aplicadas
 
-### Executar todos os testes
+* Page Object Model (POM)
+* Component Object Model
+* Page Factory
+* Separação de responsabilidades
+* Configuração por ambiente
+* Explicit Waits centralizados
+* Reutilização de componentes
+* Captura automática de evidências
+* Integração com Allure
+* Pipeline CI/CD
+* Código orientado à manutenção
+* Framework preparado para crescimento
+
+---
+
+# Cenários Automatizados
+
+## Login
+
+* ✔ Login com credenciais válidas
+* ✔ Validação da exibição da tela inicial (Dashboard)
+
+---
+
+# Como Executar
+
+Todos os testes:
 
 ```bash
 mvn clean test
 ```
 
-### Executar utilizando ambiente específico
+Ambiente específico:
 
 ```bash
 mvn clean test -Denv=qa
@@ -226,7 +270,7 @@ mvn clean test -Denv=uat
 mvn clean test -Denv=prod
 ```
 
-### Gerar e visualizar relatório Allure local
+Visualizar relatório:
 
 ```bash
 allure serve allure-results
@@ -234,32 +278,42 @@ allure serve allure-results
 
 ---
 
-## Próximas Evoluções
+# Roadmap
 
-- Login inválido
-- Logout
-- Menu lateral
-- Integração com GitHub Actions
-- Publicação de relatório Allure via pipeline
-- Execução paralela
-- Estratégia de Tags para Smoke e Regressão
+Próximas evoluções do framework:
 
----
-
-## Autor
-
-### Elói Silvestre Coelho
-
-QA Lead | QA Automation | Quality Engineering
-
-Especialista em Qualidade de Software, Automação de Testes, Estratégia de Testes e Governança de QA.
-
-**LinkedIn:** https://www.linkedin.com/in/eloi-silvestre
-
-**GitHub:** https://github.com/esilvesc-star
+* Login inválido
+* Logout
+* Menu lateral
+* Execução paralela
+* Execução por Tags
+* Smoke Tests
+* Regressão
+* Docker
+* Selenium Grid
+* Firefox
+* Edge
 
 ---
 
-## Observação
+# Autor
 
-Este projeto possui finalidade educacional e demonstrativa, sendo utilizado para estudo, evolução técnica e demonstração de boas práticas de automação de testes.
+## Elói Silvestre Coelho
+
+**QA Lead | QA Automation | Quality Engineering**
+
+Especialista em Estratégia de Testes, Automação, Governança de QA e Arquitetura de Frameworks.
+
+**LinkedIn**
+
+https://www.linkedin.com/in/eloi-silvestre
+
+**GitHub**
+
+https://github.com/esilvesc-star
+
+---
+
+# Observação
+
+Projeto desenvolvido para fins educacionais e demonstração de boas práticas de automação de testes Web, servindo como laboratório de evolução contínua em Quality Engineering.
