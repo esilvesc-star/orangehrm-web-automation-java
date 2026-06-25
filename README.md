@@ -13,66 +13,94 @@
 
 <p align="center">
 
-Framework de automação de testes Web desenvolvido para demonstrar uma arquitetura profissional utilizando <strong>Java</strong>, <strong>Selenium WebDriver</strong>, <strong>Cucumber BDD</strong>, <strong>Maven</strong>, <strong>Allure Report</strong> e <strong>GitHub Actions</strong>, seguindo boas práticas de organização, reutilização de código, escalabilidade e manutenibilidade.
+Framework profissional de automação de testes Web desenvolvido utilizando <strong>Java</strong>, <strong>Selenium WebDriver</strong>, <strong>Cucumber BDD</strong>, <strong>Maven</strong>, <strong>Allure Report</strong> e <strong>GitHub Actions</strong>, aplicando boas práticas de arquitetura, reutilização de código, organização em camadas e integração contínua.
 
 </p>
 
 ---
 
+## 📑 Índice
+
+- [🔗 Links Úteis](#-links-úteis)
+- [✨ Principais Recursos](#-principais-recursos)
+- [🎯 Objetivo](#-objetivo)
+- [🛠 Tecnologias](#-tecnologias)
+- [🏗 Arquitetura](#-arquitetura)
+- [📁 Organização do Framework](#-organização-do-framework)
+- [🌎 Gerenciamento de Ambientes](#-gerenciamento-de-ambientes)
+- [📊 Relatórios](#-relatórios)
+- [🚀 Integração Contínua (CI)](#-integração-contínua-ci)
+- [✅ Boas Práticas Aplicadas](#-boas-práticas-aplicadas)
+- [🧪 Cenários Automatizados](#-cenários-automatizados)
+- [▶️ Como Executar](#️-como-executar)
+- [🔮 Roadmap](#-roadmap)
+- [👨‍💻 Autor](#-autor)
+
+---
+
 ## 🔗 Links Úteis
 
-* 🚀 **Pipeline GitHub Actions**
+- 🚀 **Pipeline GitHub Actions**  
   https://github.com/esilvesc-star/orangehrm-web-automation-java/actions
 
-* 📊 **Relatório Allure (GitHub Pages)**
+- 📊 **Relatório Allure (GitHub Pages)**  
   https://esilvesc-star.github.io/orangehrm-web-automation-java/
 
 ---
 
 ## ✨ Principais Recursos
 
-* Arquitetura baseada em **Page Object Model (POM)**
-* **Component Object Model**
-* **Page Factory**
-* Estrutura organizada em camadas
-* Gerenciamento de múltiplos ambientes (QA, UAT e PROD)
-* Esperas explícitas centralizadas (**Explicit Waits**)
-* Captura automática de evidências em caso de falha
-* Relatórios integrados com **Allure Report**
-* Pipeline CI utilizando **GitHub Actions**
-* Código orientado à reutilização, manutenção e escalabilidade
+- ✔ Arquitetura baseada em **Page Object Model (POM)**
+- ✔ Component Object Model
+- ✔ Page Factory
+- ✔ Estrutura organizada em camadas
+- ✔ Gerenciamento de ambientes (QA, UAT e PROD)
+- ✔ Explicit Waits centralizados
+- ✔ Captura automática de evidências em falhas
+- ✔ Relatórios integrados com Allure Report
+- ✔ Pipeline CI utilizando GitHub Actions
+- ✔ Publicação automática do relatório via GitHub Pages
+- ✔ Framework preparado para crescimento e manutenção
 
 ---
 
-# Objetivo
-Este projeto foi desenvolvido como laboratório de estudos e portfólio profissional para demonstrar a implementação de um framework moderno de automação Web baseado em:
-* Selenium WebDriver
-* Java
-* Cucumber BDD
-* Maven
-* Allure Report
-* GitHub Actions (CI)
-* GitHub Pages
-* Page Object Model (POM)
-* Component Object Model
-* Page Factory
-* Gerenciamento de ambientes
-* Explicit Waits
-* Captura automática de evidências em falha
+## 🎯 Objetivo
+
+Este projeto foi desenvolvido como laboratório de estudos e portfólio profissional para demonstrar a construção de um framework moderno de automação Web baseado em:
+
+- Selenium WebDriver
+- Java
+- Cucumber BDD
+- Maven
+- Allure Report
+- GitHub Actions
+- GitHub Pages
+- Page Object Model (POM)
+- Component Object Model
+- Page Factory
+- Gerenciamento de Ambientes
+- Explicit Waits
+- Captura automática de evidências
+
 ---
-# Tecnologias
-| Tecnologia         | Versão |
-| ------------------ | ------ |
-| Java               | 11     |
-| Selenium WebDriver | 4.x    |
-| Cucumber           | 7.x    |
-| JUnit              | 4      |
-| Maven              | 3.x    |
-| WebDriverManager   | 5.x    |
-| Allure Report      | 2.x    |
-| GitHub Actions     | CI/CD  |
+
+## 🛠 Tecnologias
+
+| Tecnologia | Finalidade | Versão |
+|------------|------------|---------|
+| Java | Linguagem principal | 11 |
+| Selenium WebDriver | Automação Web | 4.x |
+| Cucumber | BDD | 7.x |
+| JUnit | Execução dos testes | 4 |
+| Maven | Build e dependências | 3.x |
+| WebDriverManager | Gerenciamento dos Drivers | 5.x |
+| Allure Report | Relatórios | 2.x |
+| GitHub Actions | Integração Contínua | CI/CD |
+
 ---
-# Arquitetura
+
+## 🏗 Arquitetura
+
 ```text
 src
 └── test
@@ -91,160 +119,198 @@ src
         ├── application-prod.properties
         └── allure.properties
 ```
-## Fluxo da Arquitetura
+
+### Fluxo da Arquitetura
+
 ```text
 Feature (BDD)
-        ↓
+        │
+        ▼
 Steps (Cucumber)
-        ↓
+        │
+        ▼
 Pages
-        ↓
+        │
+        ▼
 Components
-        ↓
+        │
+        ▼
 WebDriver
-        ↓
+        │
+        ▼
 Browser
 ```
+
 ---
-# Organização do Framework
-## Browser
-Responsável pela criação e configuração dos navegadores suportados pelo framework.
+
+## 📁 Organização do Framework
+
+| Camada | Responsabilidade |
+|---------|------------------|
+| Browser | Inicialização e configuração do navegador |
+| Components | Centralização dos elementos utilizando Page Factory |
+| Pages | Implementação das ações e regras de negócio |
+| Steps | Integração entre Gherkin e Pages |
+| Hooks | Before e After dos cenários |
+| Runner | Configuração da execução do Cucumber |
+| Utils | Classes reutilizáveis do framework |
+| Features | Cenários BDD escritos em Gherkin |
+
 ---
-## Components
-Centraliza o mapeamento dos elementos da interface utilizando **Page Factory**, promovendo reutilização e reduzindo duplicação de código.
----
-## Pages
-Implementa as ações e comportamentos de cada tela da aplicação.
-Exemplos:
-* Login
-* Navegação
-* Validações
-* Regras de negócio
----
-## Steps
-Responsável por conectar os cenários escritos em Gherkin às implementações das Pages.
----
-## Hooks
-Executa ações antes e depois de cada cenário.
-Atualmente realiza:
-* Inicialização do navegador
-* Encerramento do navegador
-* Captura automática de screenshot em falha
-* Anexo da evidência ao relatório Allure
----
-## Runner
-Configuração da execução dos testes Cucumber.
----
-## Utils
-Centraliza componentes reutilizáveis do framework.
-Atualmente:
-* ConfigReader
-* DriverManager
-* WaitUtils
----
-# Gerenciamento de Ambientes
-O framework suporta múltiplos ambientes através dos arquivos:
+
+## 🌎 Gerenciamento de Ambientes
+
+O framework suporta múltiplos ambientes utilizando arquivos de propriedades.
+
 ```text
 application-qa.properties
 application-uat.properties
 application-prod.properties
 ```
+
 Execução:
+
 ```bash
+# QA
 mvn clean test -Denv=qa
-```
-```bash
+
+# UAT
 mvn clean test -Denv=uat
-```
-```bash
+
+# PROD
 mvn clean test -Denv=prod
 ```
+
 ---
-# Relatórios
-O framework gera automaticamente os resultados na pasta:
+
+## 📊 Relatórios
+
+Os resultados da execução são gerados automaticamente na pasta:
+
 ```text
 allure-results
 ```
+
 Visualização local:
+
 ```bash
 allure serve allure-results
 ```
-Além disso:
-* Captura screenshot automaticamente em falhas
-* Anexa evidências ao Allure Report
-* Publica o relatório automaticamente via GitHub Pages
+
+O framework também:
+
+- Captura screenshot automaticamente em caso de falha
+- Anexa a evidência ao Allure Report
+- Publica automaticamente o relatório utilizando GitHub Pages
+
 ---
-# Integração Contínua (CI)
-O projeto possui pipeline automatizada utilizando **GitHub Actions**.
-A cada Push:
-* Checkout do código
-* Configuração do Java
-* Cache Maven
-* Execução dos testes
-* Geração do relatório Allure
-* Publicação automática do relatório no GitHub Pages
+
+## 🚀 Integração Contínua (CI)
+
+A pipeline automatizada executa as seguintes etapas a cada **Push**:
+
+- ✔ Checkout do código
+- ✔ Configuração do Java
+- ✔ Cache Maven
+- ✔ Execução dos testes
+- ✔ Geração do relatório Allure
+- ✔ Publicação automática do relatório no GitHub Pages
+
 ---
-# Boas Práticas Aplicadas
-* Page Object Model (POM)
-* Component Object Model
-* Page Factory
-* Separação de responsabilidades
-* Configuração por ambiente
-* Explicit Waits centralizados
-* Reutilização de componentes
-* Captura automática de evidências
-* Integração com Allure
-* Pipeline CI/CD
-* Código orientado à manutenção
-* Framework preparado para crescimento
+
+## ✅ Boas Práticas Aplicadas
+
+- Page Object Model (POM)
+- Component Object Model
+- Page Factory
+- Separação de responsabilidades
+- Gerenciamento por ambiente
+- Explicit Waits centralizados
+- Reutilização de componentes
+- Captura automática de evidências
+- Relatórios Allure
+- Pipeline CI/CD
+- Código preparado para manutenção
+- Framework escalável
+
 ---
-# Cenários Automatizados
-## Login
-* ✔ Login com credenciais válidas
-* ✔ Validação da exibição da tela inicial (Dashboard)
+
+## 🧪 Cenários Automatizados
+
+### Login
+
+- ✅ Login com credenciais válidas
+- ✅ Validação da exibição da tela inicial (Dashboard)
+
 ---
-# Como Executar
-Todos os testes:
+
+## ▶️ Como Executar
+
 ```bash
+# Todos os testes
 mvn clean test
-```
-Ambiente específico:
-```bash
+
+# Ambiente QA
 mvn clean test -Denv=qa
-```
-```bash
+
+# Ambiente UAT
 mvn clean test -Denv=uat
-```
-```bash
+
+# Ambiente PROD
 mvn clean test -Denv=prod
-```
-Visualizar relatório:
-```bash
+
+# Abrir relatório Allure
 allure serve allure-results
 ```
+
 ---
-# Roadmap
-Próximas evoluções do framework:
-* Login inválido
-* Logout
-* Menu lateral
-* Execução paralela
-* Execução por Tags
-* Smoke Tests
-* Regressão
-* Docker
-* Selenium Grid
-* Firefox
-* Edge
+
+## 🔮 Roadmap
+
+### Concluído
+
+- [x] Login válido
+- [x] Estrutura POM
+- [x] Component Object Model
+- [x] Multiambiente
+- [x] Allure Report
+- [x] Evidências automáticas
+- [x] GitHub Actions
+- [x] GitHub Pages
+
+### Próximas Evoluções
+
+- [ ] Login inválido
+- [ ] Logout
+- [ ] Menu lateral
+- [ ] Execução paralela
+- [ ] Execução por Tags
+- [ ] Smoke Tests
+- [ ] Regressão
+- [ ] Docker
+- [ ] Selenium Grid
+- [ ] Firefox
+- [ ] Edge
+
 ---
-# Autor
-## Elói Silvestre Coelho
+
+## 👨‍💻 Autor
+
+### Elói Silvestre Coelho
+
 **QA Lead | QA Automation | Quality Engineering**
+
 Especialista em Estratégia de Testes, Automação, Governança de QA e Arquitetura de Frameworks.
-**LinkedIn**
-https://www.linkedin.com/in/eloi-silvestre
-**GitHub**
-https://github.com/esilvesc-star
+
+- 🔗 **LinkedIn:** https://www.linkedin.com/in/eloi-silvestre
+- 💻 **GitHub:** https://github.com/esilvesc-star
+
 ---
-# Observação
-Projeto desenvolvido para fins educacionais e demonstração de boas práticas de automação de testes Web, servindo como laboratório de evolução contínua em Quality Engineering.
+
+## 📄 Licença
+
+Este projeto possui finalidade **educacional e demonstrativa**, sendo utilizado como laboratório de estudos e evolução contínua em **Quality Engineering** e **Automação de Testes**.
+
+---
+
+⭐ Se este projeto foi útil para você, considere deixar uma **Star** no repositório.
