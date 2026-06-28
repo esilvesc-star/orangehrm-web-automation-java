@@ -1,4 +1,4 @@
-@smoke1
+@smoke
 @myinfo
 Feature: Acesso ao módulo My Info
 
@@ -7,7 +7,7 @@ Feature: Acesso ao módulo My Info
   Para visualizar minhas informações pessoais
 
   Background:
-    Given que realizei login com credenciais válidas
+  Given que realizei login com credenciais válidas
 
   Scenario: Acessar a tela My Info com sucesso
 
