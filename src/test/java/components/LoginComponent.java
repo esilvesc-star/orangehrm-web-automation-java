@@ -20,6 +20,5 @@ public class LoginComponent {
     @FindBy(css = "button[type='submit']")
     public WebElement loginButton;
 
-    @FindBy(className = "oxd-topbar-header-title")
-    public WebElement tituloDashboardHomePage;
+   
 }
