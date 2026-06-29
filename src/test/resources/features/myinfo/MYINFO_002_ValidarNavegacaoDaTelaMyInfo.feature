@@ -1,4 +1,4 @@
-@smoke2
+@smoke
 @myinfo
 Feature: Navegação da tela My Info
 

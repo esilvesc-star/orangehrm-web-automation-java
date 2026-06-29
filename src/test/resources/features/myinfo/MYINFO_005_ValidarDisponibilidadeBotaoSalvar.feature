@@ -1,4 +1,4 @@
-@smoke5
+@smoke
 @myinfo
 Feature: Disponibilidade da ação de salvar
 

@@ -1,4 +1,4 @@
-@smoke4
+@smoke
 @myinfo
 Feature: Persistência das informações pessoais
 

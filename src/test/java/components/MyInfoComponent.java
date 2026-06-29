@@ -11,6 +11,6 @@ public class MyInfoComponent {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//h6[text()='Personal Details1111']")
+    @FindBy(xpath = "//h6[text()='Personal Details']")
     public WebElement tituloPersonalDetails;
 }

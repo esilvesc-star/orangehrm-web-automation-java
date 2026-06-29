@@ -1,4 +1,4 @@
-@smoke3
+@smoke
 @myinfo
 Feature: Atualização de informações pessoais
 
