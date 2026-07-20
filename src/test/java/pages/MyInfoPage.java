@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import components.MyInfoComponent;
 import utils.WaitUtils;
@@ -30,6 +31,57 @@ public class MyInfoPage {
                 myInfoComponent.tituloPersonalDetails);
 
         return myInfoComponent.tituloPersonalDetails.isDisplayed();
+    }
+
+    // ======================================================
+    // CENÁRIO: Validar seções disponíveis na tela My Info
+    // ======================================================
+
+    public boolean secaoEstaDisponivel(String nomeSecao) {
+        WebElement secao = obterSecao(nomeSecao);
+
+        waitUtils.aguardarElementoVisivel(secao);
+
+        return secao.isDisplayed();
+    }
+
+    private WebElement obterSecao(String nomeSecao) {
+        switch (nomeSecao.trim().toUpperCase()) {
+
+            case "PERSONAL DETAILS":
+                return myInfoComponent.secaoPersonalDetails;
+
+            case "CONTACT DETAILS":
+                return myInfoComponent.secaoContactDetails;
+
+            case "EMERGENCY CONTACTS":
+                return myInfoComponent.secaoEmergencyContacts;
+
+            case "DEPENDENTS":
+                return myInfoComponent.secaoDependents;
+
+            case "IMMIGRATION":
+                return myInfoComponent.secaoImmigration;
+
+            case "JOB":
+                return myInfoComponent.secaoJob;
+
+            case "SALARY":
+                return myInfoComponent.secaoSalary;
+
+            case "REPORT-TO":
+                return myInfoComponent.secaoReportTo;
+
+            case "QUALIFICATIONS":
+                return myInfoComponent.secaoQualifications;
+
+            case "MEMBERSHIPS":
+                return myInfoComponent.secaoMemberships;
+
+            default:
+                throw new IllegalArgumentException(
+                        "Seção não implementada: " + nomeSecao);
+        }
     }
 
     // ======================================================

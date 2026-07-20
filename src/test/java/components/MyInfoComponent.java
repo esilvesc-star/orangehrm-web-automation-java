@@ -23,4 +23,38 @@ public class MyInfoComponent {
     @FindBy(xpath = "//div[contains(@class,'oxd-toast')]")
     public WebElement mensagemSucesso;
 
+    // ======================================================
+    // Lista de seções disponíveis na tela My Info
+    // ======================================================
+
+    @FindBy(xpath = "//a[normalize-space()='Personal Details']")
+    public WebElement secaoPersonalDetails;
+
+    @FindBy(xpath = "//a[normalize-space()='Contact Details']")
+    public WebElement secaoContactDetails;
+
+    @FindBy(xpath = "//a[normalize-space()='Emergency Contacts']")
+    public WebElement secaoEmergencyContacts;
+
+    @FindBy(xpath = "//a[normalize-space()='Dependents']")
+    public WebElement secaoDependents;
+
+    @FindBy(xpath = "//a[normalize-space()='Immigration']")
+    public WebElement secaoImmigration;
+
+    @FindBy(xpath = "//a[normalize-space()='Job']")
+    public WebElement secaoJob;
+
+    @FindBy(xpath = "//a[normalize-space()='Salary']")
+    public WebElement secaoSalary;
+
+    @FindBy(xpath = "//a[normalize-space()='Report-to']")
+    public WebElement secaoReportTo;
+
+    @FindBy(xpath = "//a[normalize-space()='Qualifications']")
+    public WebElement secaoQualifications;
+
+    @FindBy(xpath = "//a[normalize-space()='Memberships']")
+    public WebElement secaoMemberships;
+
 }
