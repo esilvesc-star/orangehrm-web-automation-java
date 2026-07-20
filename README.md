@@ -276,7 +276,7 @@ Essa abordagem permite que a mesma suíte de testes seja executada em diferentes
 
 ---
 
-# 📊 Relatórios de Execução
+# 📊 Relatórios de Execuções
 
 O framework utiliza **Allure Report** para geração de relatórios ricos em detalhes sobre cada execução dos testes automatizados.
 
