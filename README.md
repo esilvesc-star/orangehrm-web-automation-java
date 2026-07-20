@@ -102,13 +102,15 @@ Todo o framework foi desenvolvido pensando em:
 
 - ✔ Arquitetura baseada em **Page Object Model (POM)**
 - ✔ Component Object Model
+- ✔ Organização por fluxo funcional
 - ✔ Separação de responsabilidades
-- ✔ Organização por módulos funcionais
 - ✔ Estrutura preparada para escalabilidade
 - ✔ Multiambiente (QA, UAT e PROD)
 - ✔ Gerenciamento de configurações por ambiente
 - ✔ Explicit Waits centralizados
-- ✔ Captura automática de evidências em falhas
+- ✔ DataTables para validações em lote
+- ✔ Captura automática de evidências durante a execução
+- ✔ Evidências organizadas por etapa no Allure Report
 - ✔ Relatórios Allure
 - ✔ Pipeline CI/CD com GitHub Actions
 - ✔ Publicação automática do Allure no GitHub Pages
@@ -212,6 +214,7 @@ src
     │   └── utils
     │       ├── ConfigReader.java
     │       ├── DriverManager.java
+    │       ├── EvidenceUtils.java
     │       └── WaitUtils.java
     │
     └── resources
@@ -275,15 +278,16 @@ Essa abordagem permite que a mesma suíte de testes seja executada em diferentes
 
 # 📊 Relatórios de Execução
 
-O framework utiliza **Allure Report** para geração de relatórios ricos em detalhes sobre cada execução.
+O framework utiliza **Allure Report** para geração de relatórios ricos em detalhes sobre cada execução dos testes automatizados.
 
-Durante os testes são disponibilizados:
+Durante a execução são disponibilizados:
 
 - ✔ Status de cada cenário
 - ✔ Tempo de execução
 - ✔ Steps executados
-- ✔ Evidências automáticas em caso de falha
-- ✔ Stack Trace
+- ✔ Evidências dos principais fluxos
+- ✔ Screenshots anexados ao Allure Report
+- ✔ Stack Trace em caso de falha
 - ✔ Histórico de execução (quando disponível)
 
 Os resultados são gerados automaticamente em:
@@ -298,7 +302,20 @@ Para visualizar o relatório localmente:
 allure serve allure-results
 ```
 
-Além da execução local, o relatório também é publicado automaticamente no **GitHub Pages** após cada execução da pipeline.
+Além da execução local, o relatório é publicado automaticamente no **GitHub Pages** após cada execução da pipeline.
+
+## 📸 Evidências Capturadas
+
+O framework registra automaticamente evidências dos principais pontos da execução, anexando screenshots diretamente ao **Allure Report** para facilitar a análise dos resultados.
+
+Atualmente são capturadas evidências para:
+
+- ✔ Acesso ao módulo My Info
+- ✔ Validação da tela Personal Details
+- ✔ Atualização do campo Other Id
+- ✔ Validação das seções utilizando DataTable
+- ✔ Validação da mensagem de sucesso após o salvamento
+- ✔ Captura automática em caso de falha
 
 ---
 
@@ -344,6 +361,13 @@ Publicação no GitHub Pages
 - ✔ Execução automática da suíte Smoke
 - ✔ Geração do Allure Report
 - ✔ Publicação automática no GitHub Pages
+
+### Comportamento da Pipeline
+
+- ✔ Publicação do Allure mesmo quando houver falhas
+- ✔ Evidências disponíveis para cenários aprovados
+- ✔ Evidências disponíveis para cenários com falha
+- ✔ Pipeline finalizada com status **Failed** quando existir algum teste reprovado
 
 > **Importante:** mesmo quando um teste falha, o relatório Allure é gerado e publicado, permitindo a análise das evidências diretamente pelo GitHub Pages. Ao final da execução, a pipeline permanece com status **Failed**, refletindo corretamente a falha dos testes.
 
@@ -470,17 +494,18 @@ Cada funcionalidade é organizada em módulos independentes, permitindo crescime
 
 - ✅ Acesso ao módulo My Info
 - ✅ Validação da exibição da tela Personal Details
+- ✅ Validação das seções disponíveis utilizando DataTable
+- ✅ Atualização do campo Other Id
+- ✅ Salvamento das alterações
+- ✅ Validação da mensagem de sucesso
 
 ### Próximos cenários
 
 - ⏳ Atualização de First Name
 - ⏳ Atualização de Last Name
 - ⏳ Atualização de Employee Id
-- ⏳ Atualização de Other Id
 - ⏳ Atualização de Driver License
-- ⏳ Salvamento das informações
-- ⏳ Validação da persistência dos dados
-- ⏳ Validação da mensagem de sucesso
+- ⏳ Validação da persistência das informações
 
 ---
 
@@ -518,14 +543,26 @@ Atualmente, a pipeline executa automaticamente a suíte **Smoke**, garantindo fe
 - [x] Integração com Allure Report
 - [x] Publicação do Allure via GitHub Pages
 - [x] Pipeline CI/CD com GitHub Actions
+- [x] DataTables
+- [x] Organização das Pages por fluxo funcional
+- [x] Evidências durante a execução
+- [x] Atualização do Other Id
+- [x] Validação das seções do My Info
+- [x] Validação das seções do módulo My Info
+- [x] Atualização das informações pessoais (Other Id)
+- [x] Salvamento das alterações
+- [x] Validação da mensagem de sucesso
+- [x] Evidências durante a execução dos cenários
 
 ---
 
 ## 🚧 Em desenvolvimento
 
-- [ ] Atualização dos dados pessoais (My Info)
+- [ ] Atualização de First Name
+- [ ] Atualização de Last Name
+- [ ] Atualização de Employee Id
+- [ ] Atualização de Driver License
 - [ ] Validação da persistência das informações
-- [ ] Validação da mensagem de sucesso
 - [ ] Login inválido
 - [ ] Logout
 
