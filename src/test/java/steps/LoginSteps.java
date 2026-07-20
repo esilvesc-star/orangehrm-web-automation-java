@@ -8,6 +8,7 @@ import pages.LoginPage;
 import utils.ConfigReader;
 import utils.DriverManager;
 import org.junit.Assert;
+import utils.EvidenceUtils;
 
 public class LoginSteps {
 

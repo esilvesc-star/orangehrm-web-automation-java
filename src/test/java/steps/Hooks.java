@@ -3,58 +3,34 @@ package steps;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+
 import utils.ConfigReader;
 import utils.DriverManager;
-import io.qameta.allure.Allure;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import java.io.ByteArrayInputStream;
+import utils.EvidenceUtils;
 
 public class Hooks {
 
-    /*
-     * Executa antes de cada cenário Cucumber.
-     *
-     * Responsabilidades:
-     * - Criar o navegador
-     * - Acessar a URL base do sistema
-     * - Exibir no console qual cenário está iniciando
-     */
     @Before
-    public void beforeScenario(Scenario scenario) {
-
-        System.out.println("\n--- INICIANDO CENÁRIO ---");
-        System.out.println(scenario.getName());
+    public void beforeScenario() {
+        System.out.println("--- INICIANDO CENÁRIO ---");
 
         DriverManager.createDriver();
 
-        DriverManager.getDriver().get(ConfigReader.getUrlBase());
+        DriverManager.getDriver().get(
+                ConfigReader.getUrlBase());
     }
 
-    /*
-     * Executa depois de cada cenário Cucumber.
-     *
-     * Responsabilidades:
-     * - Exibir no console o status do cenário
-     * - Fechar o navegador
-     */
-   @After
-public void afterScenario(Scenario scenario) {
+    @After
+    public void afterScenario(Scenario scenario) {
+        System.out.println("--- FINALIZANDO CENÁRIO ---");
 
-    System.out.println("\n--- FINALIZANDO CENÁRIO ---");
-    System.out.println(scenario.getName());
-    System.out.println("Status: " + scenario.getStatus());
-
-    if (scenario.isFailed()) {
-        byte[] screenshot = ((TakesScreenshot) DriverManager.getDriver())
-                .getScreenshotAs(OutputType.BYTES);
-
-        Allure.addAttachment(
-                "Evidência da falha",
-                new ByteArrayInputStream(screenshot)
-        );
+        try {
+            if (scenario.isFailed()) {
+                EvidenceUtils.capturarScreenshot(
+                        "Falha - " + scenario.getName());
+            }
+        } finally {
+            DriverManager.quitDriver();
+        }
     }
-
-    DriverManager.quitDriver();
-}
 }

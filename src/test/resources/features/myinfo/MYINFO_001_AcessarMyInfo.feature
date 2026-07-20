@@ -1,5 +1,4 @@
 @smoke
-@myinfo
 Feature: Acesso ao módulo My Info
 
   Como usuário autenticado

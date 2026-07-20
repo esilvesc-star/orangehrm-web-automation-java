@@ -1,4 +1,4 @@
-@myinfo
+@smoke
 Feature: Atualização de informações pessoais
 
   Como usuário autenticado
@@ -7,11 +7,11 @@ Feature: Atualização de informações pessoais
 
   Background:
     Given que realizei login com credenciais válidas
-    And acessei o módulo "My Info"
+    And acessar o módulo My Info
 
   Scenario: Atualizar informações pessoais com sucesso
 
-    When alterar o campo "Other Id"
+    When eu atualizo o campo "Other Id" com o valor "123456"
     And salvar as alterações
 
     Then a mensagem de sucesso deve ser exibida

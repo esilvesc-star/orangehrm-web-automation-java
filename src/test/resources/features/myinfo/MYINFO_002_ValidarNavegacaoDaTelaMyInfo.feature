@@ -1,4 +1,4 @@
-@myinfo
+@smoke
 Feature: Navegação da tela My Info
 
   Como usuário autenticado
@@ -7,7 +7,7 @@ Feature: Navegação da tela My Info
 
   Background:
     Given que realizei login com credenciais válidas
-    And acessei o módulo "My Info"
+    And acessar o módulo My Info
 
   Scenario: Validar as seções disponíveis da tela My Info
 

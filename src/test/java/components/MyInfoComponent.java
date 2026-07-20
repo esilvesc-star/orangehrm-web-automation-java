@@ -13,4 +13,14 @@ public class MyInfoComponent {
 
     @FindBy(xpath = "//h6[text()='Personal Details']")
     public WebElement tituloPersonalDetails;
+
+    @FindBy(xpath = "//label[normalize-space()='Other Id']/parent::div/following-sibling::div//input")
+    public WebElement campoOtherId;
+
+     @FindBy(xpath = "//button[@type='submit' and normalize-space()='Save']")
+    public WebElement botaoSave;
+
+    @FindBy(xpath = "//div[contains(@class,'oxd-toast')]")
+    public WebElement mensagemSucesso;
+
 }

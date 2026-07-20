@@ -7,7 +7,7 @@ Feature: Persistência das informações pessoais
 
   Background:
     Given que realizei login com credenciais válidas
-    And acessei o módulo "My Info"
+    And acessar o módulo My Info
 
   Scenario: Validar persistência da alteração realizada
 
