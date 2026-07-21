@@ -14,174 +14,174 @@
 </p>
 
 <p align="center">
+Framework de automação de testes Web desenvolvido com
+<strong>Java</strong>, <strong>Selenium WebDriver</strong>,
+<strong>Cucumber BDD</strong>, <strong>JUnit</strong>,
+<strong>Maven</strong>, <strong>Allure Report</strong> e
+<strong>GitHub Actions</strong>.
+</p>
 
-Framework profissional de automação de testes Web desenvolvido utilizando <strong>Java</strong>, <strong>Selenium WebDriver</strong>, <strong>Cucumber BDD</strong>, <strong>JUnit</strong>, <strong>Maven</strong>, <strong>Allure Report</strong> e <strong>GitHub Actions</strong>, seguindo boas práticas de arquitetura, organização em camadas, reutilização de código, integração contínua e escalabilidade.
-
+<p align="center">
+O projeto simula a construção e a evolução de um framework utilizado em ambientes corporativos, com foco em arquitetura, reutilização, rastreabilidade, integração contínua e facilidade de manutenção.
 </p>
 
 ---
 
-# 📌 Sobre o Projeto
+## 📌 Sobre o projeto
 
-Este projeto foi criado como um laboratório de evolução contínua em **Quality Engineering**, simulando a construção de um framework utilizado em ambientes corporativos.
+Este repositório foi criado como um laboratório de evolução contínua em **Quality Engineering**.
 
-O objetivo é demonstrar, na prática, como estruturar uma solução de automação Web utilizando princípios de arquitetura de software, boas práticas de desenvolvimento e integração contínua (CI/CD).
+Além de automatizar cenários da aplicação OrangeHRM, o projeto demonstra como organizar um framework próximo da realidade encontrada em projetos profissionais, aplicando:
 
-Todo o framework foi desenvolvido pensando em:
+- Page Object Model;
+- Component Object Model;
+- separação de responsabilidades;
+- organização em camadas;
+- configuração por ambiente;
+- esperas explícitas centralizadas;
+- testes escritos em BDD;
+- evidências automáticas;
+- relatórios de execução;
+- integração contínua;
+- publicação automática dos resultados.
 
-- Arquitetura limpa
-- Facilidade de manutenção
-- Reutilização de componentes
-- Escalabilidade
-- Separação de responsabilidades
-- Legibilidade
-- Evolução contínua
+O projeto permanece em desenvolvimento e recebe novos cenários e melhorias de arquitetura de forma incremental.
 
 ---
 
-# 🚀 Status do Projeto
-
-## Framework
+## 🚀 Status atual
 
 | Recurso | Status |
-|---------|:------:|
-| Arquitetura POM | ✅ |
+|---|:---:|
+| Page Object Model | ✅ |
 | Component Object Model | ✅ |
-| Multiambiente | ✅ |
+| Page Factory | ✅ |
+| Configuração multiambiente | ✅ |
+| Explicit Waits centralizados | ✅ |
+| Execução por tags | ✅ |
+| DataTable | ✅ |
+| Evidências automáticas | ✅ |
 | Allure Report | ✅ |
 | GitHub Actions | ✅ |
 | GitHub Pages | ✅ |
-| Captura de Evidências | ✅ |
-| Smoke Tests | ✅ |
-| CI/CD | ✅ |
+| Suíte Smoke | ✅ |
+| Suíte de regressão | 🚧 |
+| Execução paralela | 📋 |
+| Docker e Selenium Grid | 📋 |
+
+**Legenda:** ✅ concluído · 🚧 em evolução · 📋 planejado
 
 ---
 
-# 📊 Cobertura Atual
+## 🔗 Links do projeto
 
-| Módulo | Smoke | Regressão |
-|---------|:------:|:---------:|
-| Login | ✅ | ⏳ |
-| My Info | ✅ | ⏳ |
-| Admin | ⏳ | ⏳ |
-| PIM | ⏳ | ⏳ |
-| Leave | ⏳ | ⏳ |
-| Recruitment | ⏳ | ⏳ |
+- 💻 **Repositório:**  
+  https://github.com/esilvesc-star/orangehrm-web-automation-java
 
----
-
-# 📑 Índice
-
-- [🔗 Links Úteis](#-links-úteis)
-- [✨ Principais Recursos](#-principais-recursos)
-- [🎯 Objetivo](#-objetivo)
-- [🛠 Tecnologias](#-tecnologias)
-- [🏗 Arquitetura](#-arquitetura)
-- [📁 Estrutura do Projeto](#-estrutura-do-projeto)
-- [🌎 Gerenciamento de Ambientes](#-gerenciamento-de-ambientes)
-- [📊 Relatórios](#-relatórios)
-- [🚀 Integração Contínua](#-integração-contínua)
-- [🧪 Cenários Automatizados](#-cenários-automatizados)
-- [▶️ Como Executar](#️-como-executar)
-- [🗺 Roadmap](#-roadmap)
-- [👨‍💻 Autor](#-autor)
-
----
-
-# 🔗 Links Úteis
-
-- 🚀 **Pipeline GitHub Actions**  
+- 🚀 **Execuções no GitHub Actions:**  
   https://github.com/esilvesc-star/orangehrm-web-automation-java/actions
 
-- 📊 **Relatório Allure (GitHub Pages)**  
+- 📊 **Relatório Allure publicado:**  
   https://esilvesc-star.github.io/orangehrm-web-automation-java/
 
----
-
-# ✨ Principais Recursos
-
-- ✔ Arquitetura baseada em **Page Object Model (POM)**
-- ✔ Component Object Model
-- ✔ Organização por fluxo funcional
-- ✔ Separação de responsabilidades
-- ✔ Estrutura preparada para escalabilidade
-- ✔ Multiambiente (QA, UAT e PROD)
-- ✔ Gerenciamento de configurações por ambiente
-- ✔ Explicit Waits centralizados
-- ✔ DataTables para validações em lote
-- ✔ Captura automática de evidências durante a execução
-- ✔ Evidências organizadas por etapa no Allure Report
-- ✔ Relatórios Allure
-- ✔ Pipeline CI/CD com GitHub Actions
-- ✔ Publicação automática do Allure no GitHub Pages
-- ✔ Smoke Tests executados automaticamente
-- ✔ Framework preparado para evolução contínua
+- 🌐 **Aplicação utilizada nos testes:**  
+  https://opensource-demo.orangehrmlive.com/
 
 ---
 
-# 🎯 Objetivo
+## 📑 Índice
 
-Construir um framework de automação Web que represente uma estrutura encontrada em projetos corporativos, aplicando boas práticas de Engenharia de Software e Engenharia de Qualidade.
+- [Principais recursos](#-principais-recursos)
+- [Tecnologias](#-tecnologias)
+- [Arquitetura do framework](#-arquitetura-do-framework)
+- [Estrutura do projeto](#-estrutura-do-projeto)
+- [Responsabilidade das camadas](#-responsabilidade-das-camadas)
+- [Gerenciamento de ambientes](#-gerenciamento-de-ambientes)
+- [Cenários automatizados](#-cenários-automatizados)
+- [Estratégia de execução](#-estratégia-de-execução)
+- [Como executar localmente](#️-como-executar-localmente)
+- [Allure Report e evidências](#-allure-report-e-evidências)
+- [Integração contínua](#-integração-contínua)
+- [Roadmap](#️-roadmap)
+- [Autor](#-autor)
 
-Além da automação dos testes, o projeto demonstra conhecimentos em:
+---
 
-- Arquitetura de Frameworks
-- Organização em Camadas
-- Test Automation Design Patterns
-- CI/CD
-- Versionamento com Git
-- Relatórios de Execução
-- Evidências Automáticas
-- Escalabilidade
-- Manutenibilidade
+## ✨ Principais recursos
+
+- Arquitetura baseada em **Page Object Model**;
+- mapeamento de elementos com **Component Object Model** e Page Factory;
+- separação entre Features, Steps, Pages, Components e Utilities;
+- organização dos métodos por fluxo funcional;
+- suporte aos ambientes QA, UAT e PROD;
+- gerenciamento centralizado do WebDriver;
+- configuração dinâmica de navegador e modo headless;
+- Explicit Waits centralizados;
+- escrita dos cenários em Gherkin;
+- execução por tags do Cucumber;
+- utilização de DataTable para validações em lote;
+- screenshots dos principais pontos da execução;
+- captura automática de evidência em caso de falha;
+- geração de relatórios com Allure;
+- execução automática da suíte Smoke;
+- publicação do relatório no GitHub Pages;
+- pipeline sinalizada como falha quando houver teste reprovado.
 
 ---
 
 # 🛠 Tecnologias
 
-| Tecnologia | Finalidade | Versão |
-|------------|------------|:------:|
-| Java | Linguagem principal | 11 |
-| Selenium WebDriver | Automação Web | 4.x |
-| Cucumber | BDD | 7.x |
-| JUnit | Execução dos testes | 4 |
-| Maven | Gerenciamento do Build | 3.x |
-| WebDriverManager | Gerenciamento dos Drivers | 5.x |
-| Allure Report | Relatórios | 2.x |
-| GitHub Actions | CI/CD | ✔ |
-| GitHub Pages | Publicação dos relatórios | ✔ |
+| Tecnologia | Utilização |
+|------------|------------|
+| Java 11 | Linguagem principal |
+| Selenium WebDriver 4 | Automação Web |
+| Cucumber BDD | Escrita dos cenários |
+| JUnit 4 | Execução dos testes |
+| Maven | Build e gerenciamento de dependências |
+| WebDriverManager | Gerenciamento automático dos drivers |
+| Allure Report | Relatórios e evidências |
+| GitHub Actions | Integração Contínua |
+| GitHub Pages | Publicação automática do relatório |
 
 ---
 
 # 🏗 Arquitetura do Framework
 
-O projeto foi desenvolvido utilizando uma arquitetura em camadas, promovendo reutilização, desacoplamento e facilidade de manutenção.
+O framework foi estruturado utilizando uma arquitetura em camadas para promover:
+
+- baixo acoplamento;
+- alta coesão;
+- reutilização de componentes;
+- facilidade de manutenção;
+- escalabilidade.
+
+Cada camada possui uma responsabilidade única.
 
 ```text
 Feature (BDD)
-        │
-        ▼
+      │
+      ▼
 Step Definitions
-        │
-        ▼
+      │
+      ▼
 Page Objects
-        │
-        ▼
+      │
+      ▼
 Components
 (Element Mapping)
-        │
-        ▼
+      │
+      ▼
 Utilities
-(Waits • Driver • Config)
-        │
-        ▼
+(Driver • Wait • Config • Evidence)
+      │
+      ▼
 WebDriver
-        │
-        ▼
+      │
+      ▼
 Browser Factory
 ```
 
-Cada camada possui uma responsabilidade bem definida, tornando o framework preparado para crescer sem aumentar sua complexidade.
+Essa arquitetura facilita a evolução do framework sem aumentar sua complexidade.
 
 ---
 
@@ -191,63 +191,64 @@ Cada camada possui uma responsabilidade bem definida, tornando o framework prepa
 src
 └── test
     ├── java
-    │   ├── browser
-    │   │   └── BrowserFactory.java
-    │   │
-    │   ├── components
-    │   │   ├── DashboardComponent.java
-    │   │   ├── LoginComponent.java
-    │   │   └── MyInfoComponent.java
-    │   │
-    │   ├── pages
-    │   │   ├── DashboardPage.java
-    │   │   ├── LoginPage.java
-    │   │   └── MyInfoPage.java
-    │   │
-    │   ├── runner
-    │   │   └── TestRunner.java
-    │   │
-    │   ├── steps
-    │   │   ├── LoginSteps.java
-    │   │   └── MyInfoSteps.java
-    │   │
-    │   └── utils
-    │       ├── ConfigReader.java
-    │       ├── DriverManager.java
-    │       ├── EvidenceUtils.java
-    │       └── WaitUtils.java
     │
-    └── resources
-        ├── features
-        │   ├── login
-        │   └── myinfo
-        │
-        ├── application-qa.properties
-        ├── application-uat.properties
-        ├── application-prod.properties
-        ├── cucumber.properties
-        └── allure.properties
+    ├── browser
+    │     └── BrowserFactory.java
+    │
+    ├── components
+    │     ├── LoginComponent.java
+    │     ├── DashboardComponent.java
+    │     └── MyInfoComponent.java
+    │
+    ├── pages
+    │     ├── LoginPage.java
+    │     ├── DashboardPage.java
+    │     └── MyInfoPage.java
+    │
+    ├── steps
+    │     ├── LoginSteps.java
+    │     └── MyInfoSteps.java
+    │
+    ├── runner
+    │     └── TestRunner.java
+    │
+    └── utils
+          ├── ConfigReader.java
+          ├── DriverManager.java
+          ├── EvidenceUtils.java
+          └── WaitUtils.java
+
+└── resources
+      ├── features
+      │     ├── login
+      │     └── myinfo
+      │
+      ├── application-qa.properties
+      ├── application-uat.properties
+      ├── application-prod.properties
+      ├── cucumber.properties
+      └── allure.properties
 ```
 
 ---
 
-# 🧩 Organização das Camadas
+# 📚 Responsabilidade das Camadas
 
 | Camada | Responsabilidade |
 |---------|------------------|
-| **Browser** | Inicialização e configuração dos navegadores |
-| **Components** | Mapeamento dos elementos utilizando Page Factory |
-| **Pages** | Implementação das regras de negócio e ações das telas |
-| **Steps** | Implementação das etapas descritas no Gherkin |
-| **Runner** | Configuração da execução dos testes Cucumber |
-| **Utils** | Classes utilitárias compartilhadas por todo o framework |
-| **Features** | Cenários BDD escritos em Gherkin |
+| Browser | Inicialização dos navegadores |
+| Components | Mapeamento dos elementos da interface |
+| Pages | Regras de negócio e ações das telas |
+| Steps | Implementação dos passos do Gherkin |
+| Runner | Configuração da execução |
+| Utils | Classes utilitárias compartilhadas |
+| Features | Cenários escritos em BDD |
 
 ---
 
 # 🌎 Gerenciamento de Ambientes
 
-O framework suporta a execução em diferentes ambientes através de arquivos de configuração específicos.
+O framework suporta múltiplos ambientes de execução através de arquivos de configuração independentes.
 
 ```text
 application-qa.properties
@@ -255,229 +256,49 @@ application-uat.properties
 application-prod.properties
 ```
 
-A seleção do ambiente é realizada via parâmetro Maven:
+A seleção do ambiente é realizada via parâmetro Maven.
 
-```bash
-# QA
-mvn clean test -Denv=qa
-```
-
-```bash
-# UAT
-mvn clean test -Denv=uat
-```
-
-```bash
-# PROD
-mvn clean test -Denv=prod
-```
-
-Essa abordagem permite que a mesma suíte de testes seja executada em diferentes ambientes sem necessidade de alteração no código-fonte.
-
----
-
-# 📊 Relatórios de Execuções
-
-O framework utiliza **Allure Report** para geração de relatórios ricos em detalhes sobre cada execução dos testes automatizados.
-
-Durante a execução são disponibilizados:
-
-- ✔ Status de cada cenário
-- ✔ Tempo de execução
-- ✔ Steps executados
-- ✔ Evidências dos principais fluxos
-- ✔ Screenshots anexados ao Allure Report
-- ✔ Stack Trace em caso de falha
-- ✔ Histórico de execução (quando disponível)
-
-Os resultados são gerados automaticamente em:
-
-```text
-allure-results/
-```
-
-Para visualizar o relatório localmente:
-
-```bash
-allure serve allure-results
-```
-
-Além da execução local, o relatório é publicado automaticamente no **GitHub Pages** após cada execução da pipeline.
-
-## 📸 Evidências Capturadas
-
-O framework registra automaticamente evidências dos principais pontos da execução, anexando screenshots diretamente ao **Allure Report** para facilitar a análise dos resultados.
-
-Atualmente são capturadas evidências para:
-
-- ✔ Acesso ao módulo My Info
-- ✔ Validação da tela Personal Details
-- ✔ Atualização do campo Other Id
-- ✔ Validação das seções utilizando DataTable
-- ✔ Validação da mensagem de sucesso após o salvamento
-- ✔ Captura automática em caso de falha
-
----
-
-# 🚀 Integração Contínua (CI/CD)
-
-O projeto possui uma pipeline automatizada utilizando **GitHub Actions**, responsável por validar a qualidade do framework a cada alteração enviada ao repositório.
-
-## Fluxo da Pipeline
-
-```text
-Developer
-    │
-    ▼
-Git Push
-    │
-    ▼
-GitHub Actions
-    │
-    ▼
-Checkout do Código
-    │
-    ▼
-Configuração do Java
-    │
-    ▼
-Cache Maven
-    │
-    ▼
-Execução dos Smoke Tests
-    │
-    ▼
-Geração do Allure Report
-    │
-    ▼
-Publicação no GitHub Pages
-```
-
-### Etapas executadas
-
-- ✔ Checkout do código
-- ✔ Configuração do Java 11
-- ✔ Cache das dependências Maven
-- ✔ Execução automática da suíte Smoke
-- ✔ Geração do Allure Report
-- ✔ Publicação automática no GitHub Pages
-
-### Comportamento da Pipeline
-
-- ✔ Publicação do Allure mesmo quando houver falhas
-- ✔ Evidências disponíveis para cenários aprovados
-- ✔ Evidências disponíveis para cenários com falha
-- ✔ Pipeline finalizada com status **Failed** quando existir algum teste reprovado
-
-> **Importante:** mesmo quando um teste falha, o relatório Allure é gerado e publicado, permitindo a análise das evidências diretamente pelo GitHub Pages. Ao final da execução, a pipeline permanece com status **Failed**, refletindo corretamente a falha dos testes.
-
----
-
-# 🧪 Estratégia de Execução
-
-Atualmente o framework utiliza **Tags do Cucumber** para organizar as suítes de testes.
-
-Exemplo:
-
-```gherkin
-@smoke
-@login
-```
-
-```gherkin
-@smoke
-@myinfo
-```
-
-Execução da suíte Smoke:
-
-```bash
-mvn clean test -Dcucumber.filter.tags="@smoke"
-```
-
-Execução de um módulo específico:
-
-```bash
-mvn clean test -Dcucumber.filter.tags="@smoke and @myinfo"
-```
-
-Essa estratégia facilita a integração com pipelines CI/CD e permite selecionar rapidamente subconjuntos de testes conforme a necessidade.
-
----
-
-# ▶️ Como Executar
-
-## Executar todos os testes
-
-```bash
-mvn clean test
-```
-
----
-
-## Executar suíte Smoke
-
-```bash
-mvn clean test -Dcucumber.filter.tags="@smoke"
-```
-
----
-
-## Executar Smoke do módulo My Info
-
-```bash
-mvn clean test -Dcucumber.filter.tags="@smoke and @myinfo"
-```
-
----
-
-## Executar em ambiente específico
+### QA
 
 ```bash
 mvn clean test -Denv=qa
 ```
 
+### UAT
+
 ```bash
 mvn clean test -Denv=uat
 ```
+
+### PROD
 
 ```bash
 mvn clean test -Denv=prod
 ```
 
----
-
-## Abrir o relatório Allure
-
-```bash
-allure serve allure-results
-```
+Essa abordagem permite reutilizar a mesma suíte de testes em diferentes ambientes sem qualquer alteração no código-fonte.
 
 ---
 
-# 📋 Cobertura Funcional
+# 🧩 Princípios adotados
 
-O framework está sendo desenvolvido de forma incremental, simulando a evolução de uma suíte de testes corporativa.
+Durante o desenvolvimento do framework foram aplicados conceitos amplamente utilizados em projetos corporativos:
 
-Cada funcionalidade é organizada em módulos independentes, permitindo crescimento contínuo e facilitando a manutenção da automação.
-
-## Módulos
-
-| Módulo | Smoke | Regressão | Status |
-|---------|:------:|:---------:|:------:|
-| Login | ✅ | ⏳ | Em evolução |
-| Dashboard | ✅ | ⏳ | Em evolução |
-| My Info | ✅ | ⏳ | Em evolução |
-| Admin | ⏳ | ⏳ | Planejado |
-| PIM | ⏳ | ⏳ | Planejado |
-| Leave | ⏳ | ⏳ | Planejado |
-| Time | ⏳ | ⏳ | Planejado |
-| Recruitment | ⏳ | ⏳ | Planejado |
-| Performance | ⏳ | ⏳ | Planejado |
+- Page Object Model (POM);
+- Component Object Model;
+- Single Responsibility Principle (SRP);
+- reutilização de componentes;
+- separação entre mapeamento e regras de negócio;
+- centralização das configurações;
+- reutilização de waits;
+- organização por fluxo funcional;
+- preparação para escalabilidade.
 
 ---
 
 # 🧪 Cenários Automatizados
+
+O framework está sendo desenvolvido de forma incremental, simulando a evolução de uma suíte de testes utilizada em projetos corporativos.
 
 ## 🔐 Login
 
@@ -493,76 +314,213 @@ Cada funcionalidade é organizada em módulos independentes, permitindo crescime
 ### Smoke
 
 - ✅ Acesso ao módulo My Info
-- ✅ Validação da exibição da tela Personal Details
-- ✅ Validação das seções disponíveis utilizando DataTable
-- ✅ Atualização do campo Other Id
+- ✅ Validação da tela **Personal Details**
+- ✅ Validação das seções utilizando **DataTable**
+- ✅ Atualização do campo **Other Id**
 - ✅ Salvamento das alterações
 - ✅ Validação da mensagem de sucesso
 
-### Próximos cenários
+### Em desenvolvimento
 
-- ⏳ Atualização de First Name
-- ⏳ Atualização de Last Name
-- ⏳ Atualização de Employee Id
-- ⏳ Atualização de Driver License
-- ⏳ Validação da persistência das informações
+- 🚧 Atualização de First Name
+- 🚧 Atualização de Last Name
+- 🚧 Atualização de Employee Id
+- 🚧 Atualização de Driver License
+- 🚧 Validação da persistência das informações
 
 ---
 
-# 🧩 Estratégia de Automação
+# 📋 Cobertura Atual
 
-Os cenários são classificados por finalidade, permitindo diferentes estratégias de execução durante a pipeline.
+| Módulo | Smoke | Regressão |
+|---------|:------:|:---------:|
+| Login | ✅ | 🚧 |
+| Dashboard | ✅ | 🚧 |
+| My Info | ✅ | 🚧 |
+| Admin | 📋 | 📋 |
+| PIM | 📋 | 📋 |
+| Leave | 📋 | 📋 |
+| Recruitment | 📋 | 📋 |
+| Time | 📋 | 📋 |
 
-| Tipo | Objetivo |
-|-------|----------|
-| Smoke | Validar rapidamente os principais fluxos da aplicação após um deploy |
-| Regressão | Garantir que funcionalidades existentes continuam funcionando |
-| Funcional | Validar regras de negócio específicas |
-| Integração | Validar interação entre módulos |
-| End-to-End | Validar o fluxo completo do usuário |
+**Legenda:**  
+✅ Implementado • 🚧 Em desenvolvimento • 📋 Planejado
 
-Atualmente, a pipeline executa automaticamente a suíte **Smoke**, garantindo feedback rápido sobre a estabilidade da aplicação.
+---
+
+# 🚀 Estratégia de Execução
+
+Os cenários são organizados utilizando **Tags do Cucumber**, permitindo diferentes estratégias de execução.
+
+Exemplo:
+
+```gherkin
+@smoke
+@login
+```
+
+```gherkin
+@smoke
+@myinfo
+```
+
+Executar toda a suíte Smoke:
+
+```bash
+mvn clean test -Denv=qa -Dcucumber.filter.tags="@smoke"
+```
+
+Executar apenas o módulo My Info:
+
+```bash
+mvn clean test -Denv=qa -Dcucumber.filter.tags="@smoke and @myinfo"
+```
+
+Essa abordagem permite selecionar rapidamente subconjuntos de testes, reduzindo o tempo de execução e facilitando a integração com pipelines CI/CD.
+
+---
+
+# ▶️ Como Executar Localmente
+
+### 1️⃣ Limpar resultados anteriores
+
+```bash
+rm -rf allure-results allure-report
+```
+
+### 2️⃣ Executar a suíte Smoke
+
+```bash
+mvn clean test -Denv=qa -Dcucumber.filter.tags="@smoke"
+```
+
+### 3️⃣ Abrir o relatório Allure
+
+```bash
+allure serve allure-results
+```
+
+---
+
+# 📊 Allure Report e Evidências
+
+O framework utiliza o **Allure Report** para geração de relatórios completos da execução dos testes.
+
+Cada execução apresenta:
+
+- ✔ Status dos cenários
+- ✔ Tempo de execução
+- ✔ Steps executados
+- ✔ Screenshots das principais etapas
+- ✔ Evidências anexadas automaticamente
+- ✔ Stack Trace em caso de falha
+
+As evidências atualmente contemplam:
+
+- 📸 Tela Personal Details
+- 📸 Atualização do campo Other Id
+- 📸 Validação das seções da tela
+- 📸 Mensagem de sucesso após o salvamento
+- 📸 Captura automática em caso de falha
+
+Além da execução local, o relatório é publicado automaticamente no **GitHub Pages**.
+
+---
+
+# 🚀 Integração Contínua (CI/CD)
+
+O projeto possui uma pipeline automatizada utilizando **GitHub Actions**.
+
+Fluxo da pipeline:
+
+```text
+Developer
+    │
+    ▼
+Git Push
+    │
+    ▼
+GitHub Actions
+    │
+    ▼
+Checkout
+    │
+    ▼
+Build Maven
+    │
+    ▼
+Execução dos Smoke Tests
+    │
+    ▼
+Geração do Allure Report
+    │
+    ▼
+Publicação no GitHub Pages
+```
+
+A pipeline executa automaticamente:
+
+- ✔ Checkout do código
+- ✔ Configuração do Java
+- ✔ Cache das dependências Maven
+- ✔ Execução da suíte Smoke
+- ✔ Geração do Allure Report
+- ✔ Publicação automática do relatório
+
+Mesmo quando algum cenário falha, o relatório continua sendo publicado, permitindo analisar as evidências diretamente pelo GitHub Pages, enquanto a pipeline permanece com status **Failed**, refletindo corretamente a falha dos testes.
 
 ---
 
 # 🗺 Roadmap
 
+O desenvolvimento do framework segue uma evolução incremental, semelhante ao ciclo de crescimento de um projeto corporativo.
+
+---
+
 ## ✅ Concluído
 
-- [x] Arquitetura baseada em POM
-- [x] Component Object Model
-- [x] Multiambiente
-- [x] Configuração via Properties
+### Arquitetura
+
+- [x] Page Object Model (POM)
+- [x] Component Object Model (COM)
 - [x] Browser Factory
-- [x] Explicit Waits
-- [x] Login válido
-- [x] Dashboard
-- [x] Primeiro cenário Smoke
-- [x] Módulo My Info
-- [x] Captura automática de evidências
-- [x] Integração com Allure Report
-- [x] Publicação do Allure via GitHub Pages
-- [x] Pipeline CI/CD com GitHub Actions
-- [x] DataTables
+- [x] Configuração Multiambiente
+- [x] Gerenciamento por Properties
+- [x] Explicit Waits centralizados
 - [x] Organização das Pages por fluxo funcional
-- [x] Evidências durante a execução
-- [x] Atualização do Other Id
-- [x] Validação das seções do My Info
-- [x] Validação das seções do módulo My Info
-- [x] Atualização das informações pessoais (Other Id)
+
+### Automação
+
+- [x] Login com credenciais válidas
+- [x] Navegação até o módulo My Info
+- [x] Validação da tela Personal Details
+- [x] Atualização do campo Other Id
 - [x] Salvamento das alterações
 - [x] Validação da mensagem de sucesso
+- [x] Validação das seções utilizando DataTable
+
+### Qualidade
+
+- [x] Captura automática de evidências
 - [x] Evidências durante a execução dos cenários
+- [x] Integração com Allure Report
+- [x] Publicação automática via GitHub Pages
+- [x] Pipeline CI/CD com GitHub Actions
 
 ---
 
 ## 🚧 Em desenvolvimento
+
+### My Info
 
 - [ ] Atualização de First Name
 - [ ] Atualização de Last Name
 - [ ] Atualização de Employee Id
 - [ ] Atualização de Driver License
 - [ ] Validação da persistência das informações
+
+### Login
+
 - [ ] Login inválido
 - [ ] Logout
 
@@ -580,14 +538,13 @@ Atualmente, a pipeline executa automaticamente a suíte **Smoke**, garantindo fe
 - [ ] Retry automático
 - [ ] Dashboard de métricas
 
-### Qualidade
+### Integrações
 
-- [ ] Regressão automatizada
-- [ ] Integração com SonarQube
-- [ ] Integração com Jira/Xray
-- [ ] Relatórios históricos Allure
+- [ ] SonarQube
+- [ ] Jira / Xray
+- [ ] Histórico de execuções do Allure
 
-### Funcionalidades
+### Novos módulos
 
 - [ ] Admin
 - [ ] PIM
@@ -598,97 +555,127 @@ Atualmente, a pipeline executa automaticamente a suíte **Smoke**, garantindo fe
 
 ---
 
-# 👨‍💻 Autor
-
-## Elói Silvestre Coelho
-
-**QA Lead | QA Automation Engineer | Quality Engineering**
-
-Profissional com mais de **15 anos de experiência em Qualidade de Software**, atuando em Estratégia de Testes, Automação Web, Governança de QA e evolução de Frameworks de Automação.
-
-### Especialidades
-
-- Test Automation
-- Selenium WebDriver
-- Java
-- Cucumber BDD
-- Playwright
-- CI/CD
-- GitHub Actions
-- Allure Report
-- Test Strategy
-- Quality Engineering
-
----
-
-## 🌐 Conecte-se
-
-🔗 **LinkedIn**
-
-https://www.linkedin.com/in/eloi-silvestre
-
-💻 **GitHub**
-
-https://github.com/esilvesc-star
-
----
-
-# 🤝 Contribuições
-
-Este projeto possui finalidade educacional e demonstração de boas práticas de Engenharia de Qualidade.
-
-Sugestões, melhorias e discussões sobre arquitetura de automação são sempre bem-vindas.
-
-Caso tenha alguma sugestão, fique à vontade para abrir uma **Issue** ou enviar um **Pull Request**.
-
----
-
-# 📄 Licença
-
-Este projeto é disponibilizado para fins **educacionais**, **estudos** e **demonstração de conhecimentos técnicos**, servindo como laboratório de evolução contínua em Automação de Testes.
-
----
-
 # 🎯 Objetivos do Projeto
 
-Este repositório foi criado com o objetivo de demonstrar conhecimentos em:
+Este projeto tem como propósito demonstrar a construção e evolução de um framework de automação seguindo práticas adotadas em projetos corporativos.
 
-- ✔ Arquitetura de Frameworks de Automação
-- ✔ Engenharia de Qualidade
+Além da implementação dos cenários automatizados, o framework busca evidenciar conhecimentos em:
+
+- ✔ Arquitetura de Frameworks
+- ✔ Quality Engineering
 - ✔ Selenium WebDriver
 - ✔ Java
 - ✔ Cucumber BDD
-- ✔ Design Patterns para Automação
+- ✔ Design Patterns
 - ✔ Integração Contínua (CI/CD)
 - ✔ GitHub Actions
+- ✔ GitHub Pages
 - ✔ Allure Report
+- ✔ Estratégia de Testes
+- ✔ Organização de projetos
 - ✔ Boas práticas de desenvolvimento
-- ✔ Organização de projetos corporativos
 
 ---
 
 # 🚀 Próximos Passos
 
-A evolução do framework continuará acompanhando um cenário próximo ao encontrado em projetos reais.
+A evolução do projeto continuará acompanhando um fluxo semelhante ao encontrado em ambientes corporativos.
 
 Os próximos incrementos contemplam:
 
-- Ampliação da cobertura funcional do módulo **My Info**
-- Implementação de novos módulos do OrangeHRM
-- Evolução da suíte de regressão
-- Execução paralela
-- Docker
-- Selenium Grid
-- Integração com SonarQube
-- Integração com Jira/Xray
-- Dashboard de métricas
+- Ampliação da cobertura funcional do módulo **My Info**;
+- Implementação dos módulos **Admin**, **PIM**, **Leave**, **Time** e **Recruitment**;
+- Estruturação da suíte completa de regressão;
+- Execução paralela dos testes;
+- Integração com Selenium Grid;
+- Execução em Docker;
+- Integração com SonarQube;
+- Integração com Jira / Xray;
+- Evolução do dashboard de métricas;
+- Melhoria contínua da arquitetura do framework.
+
+---
+
+# 👨‍💻 Autor
+
+## Elói Silvestre Coelho
+
+**QA Lead | Quality Engineering | Test Automation**
+
+Profissional com mais de **15 anos de experiência em Qualidade de Software**, atuando em Estratégia de Testes, Automação, Liderança Técnica, Governança de QA e evolução de Frameworks de Automação.
+
+### Principais competências
+
+- Test Automation
+- Quality Engineering
+- Selenium WebDriver
+- Java
+- Cucumber BDD
+- Playwright
+- API Testing
+- CI/CD
+- GitHub Actions
+- Allure Report
+- Test Strategy
+- Test Leadership
+
+---
+
+## 🌐 Conecte-se
+
+**LinkedIn**
+
+🔗 https://www.linkedin.com/in/eloi-silvestre
+
+**GitHub**
+
+🔗 https://github.com/esilvesc-star
+
+---
+
+# 🤝 Contribuições
+
+Este projeto foi criado com finalidade **educacional**, **demonstrativa** e de **compartilhamento de conhecimento**.
+
+Caso encontre alguma oportunidade de melhoria, tenha sugestões sobre arquitetura, automação ou boas práticas de Quality Engineering, fique à vontade para contribuir.
+
+Você pode contribuir através de:
+
+- ⭐ Star no repositório
+- 🐞 Abertura de Issues
+- 🔀 Pull Requests
+- 💬 Discussões e sugestões
+
+Toda contribuição será muito bem-vinda.
+
+---
+
+# 📄 Licença
+
+Este projeto é disponibilizado para fins **educacionais**, **estudos**, **compartilhamento de conhecimento** e **demonstração técnica**, podendo servir como referência para profissionais que desejam estudar automação de testes e estruturação de frameworks.
+
+---
+
+# 💡 Sobre este projeto
+
+A construção deste framework representa minha forma de estudar, compartilhar conhecimento e evoluir continuamente como profissional de Quality Engineering.
+
+Meu objetivo não é apenas automatizar testes, mas demonstrar como estruturar um framework organizado, escalável e alinhado às práticas encontradas em projetos corporativos.
+
+A cada nova funcionalidade implementada, pretendo evoluir este repositório e compartilhar essa jornada com a comunidade, para que ele também possa servir de referência para outros profissionais que estejam aprendendo ou aperfeiçoando suas habilidades em automação de testes.
+
+Se este projeto contribuir de alguma forma para o seu aprendizado, ficarei muito feliz em saber.
 
 ---
 
 <p align="center">
 
-### ⭐ Se este projeto foi útil para você, considere deixar uma Star no repositório.
+### ⭐ Gostou do projeto?
 
-Isso incentiva a evolução contínua do framework e ajuda outras pessoas interessadas em Engenharia de Qualidade e Automação de Testes.
+Se este repositório foi útil para você, considere deixar uma **Star**.
+
+Além de incentivar a evolução contínua do projeto, isso ajuda outras pessoas da comunidade de QA a encontrarem esse conteúdo.
+
+Muito obrigado pela visita! 🚀
 
 </p>
