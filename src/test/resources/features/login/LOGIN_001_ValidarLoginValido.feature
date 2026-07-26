@@ -1,6 +1,5 @@
-@login
+
 @smoke
-@regression
 
 Feature: Login
 

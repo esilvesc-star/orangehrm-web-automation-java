@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.Keys;
 
 import components.MyInfoComponent;
 import utils.WaitUtils;
@@ -13,11 +14,11 @@ import utils.WaitUtils;
  * funcionais automatizados no módulo My Info.
  */
 public class MyInfoPage {
-
     private final MyInfoComponent myInfoComponent;
     private final WaitUtils waitUtils;
 
     public MyInfoPage(WebDriver driver) {
+
         this.myInfoComponent = new MyInfoComponent(driver);
         this.waitUtils = new WaitUtils(driver);
     }
@@ -27,6 +28,13 @@ public class MyInfoPage {
     // ======================================================
 
     public boolean personalDetailsFoiExibida() {
+
+        waitUtils.aguardarUrlConter(
+                "viewPersonalDetails");
+
+        waitUtils.aguardarPaginaCarregar();
+        waitUtils.aguardarCarregamentoFinalizar();
+
         waitUtils.aguardarElementoVisivel(
                 myInfoComponent.tituloPersonalDetails);
 
@@ -92,11 +100,25 @@ public class MyInfoPage {
         waitUtils.aguardarElementoVisivel(
                 myInfoComponent.campoOtherId);
 
-        myInfoComponent.campoOtherId.clear();
+        myInfoComponent.campoOtherId.click();
+
+        myInfoComponent.campoOtherId.sendKeys(
+                Keys.chord(Keys.CONTROL, "a"));
+
+        myInfoComponent.campoOtherId.sendKeys(Keys.BACK_SPACE);
         myInfoComponent.campoOtherId.sendKeys(valor);
+
+        waitUtils.aguardarAtributoComValor(
+                myInfoComponent.campoOtherId,
+                valor);
+
+        // Retira o foco do campo e confirma a alteração para a aplicação.
+        myInfoComponent.campoOtherId.sendKeys(Keys.TAB);
     }
 
     public void clicarSalvar() {
+        waitUtils.aguardarCarregamentoFinalizar();
+
         waitUtils.aguardarElementoClicavel(
                 myInfoComponent.botaoSave);
 
@@ -104,9 +126,24 @@ public class MyInfoPage {
     }
 
     public boolean mensagemSucessoFoiExibida() {
-        waitUtils.aguardarElementoVisivel(
+        return waitUtils.elementoFicouVisivel(
                 myInfoComponent.mensagemSucesso);
-
-        return myInfoComponent.mensagemSucesso.isDisplayed();
     }
+
+    // ======================================================
+    // CENÁRIO: Persistência das informações pessoais
+    // ======================================================
+
+    public boolean otherIdFoiPersistido(String valorEsperado) {
+
+        waitUtils.atualizarPagina();
+
+        waitUtils.aguardarElementoVisivel(
+                myInfoComponent.campoOtherId);
+
+        return waitUtils.aguardarAtributoComValor(
+                myInfoComponent.campoOtherId,
+                valorEsperado);
+    }
+
 }
