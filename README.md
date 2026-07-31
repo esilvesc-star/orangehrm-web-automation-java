@@ -104,6 +104,7 @@ O projeto permanece em desenvolvimento e recebe novos cenários e melhorias de a
 - [Integração contínua](#-integração-contínua)
 - [Roadmap](#️-roadmap)
 - [Autor](#-autor)
+- [Inteligência Artificial aplicada ao Framework](#-inteligência-artificial-aplicada-ao-framework)
 
 ---
 
@@ -126,6 +127,10 @@ O projeto permanece em desenvolvimento e recebe novos cenários e melhorias de a
 - execução automática da suíte Smoke;
 - publicação do relatório no GitHub Pages;
 - pipeline sinalizada como falha quando houver teste reprovado.
+- utilização de agentes especializados com GitHub Copilot;
+- prompts reutilizáveis para automação de testes;
+- processo de desenvolvimento assistido por Inteligência Artificial;
+- validação automática das implementações antes da conclusão.
 
 ---
 
@@ -184,6 +189,61 @@ Browser Factory
 Essa arquitetura facilita a evolução do framework sem aumentar sua complexidade.
 
 ---
+
+# 🤖 Inteligência Artificial aplicada ao Framework
+
+Além da arquitetura tradicional de automação, este projeto incorpora Inteligência Artificial como apoio ao desenvolvimento e evolução do framework.
+
+O objetivo não é substituir a tomada de decisão do engenheiro de qualidade, mas acelerar atividades repetitivas, aumentar a consistência das implementações e garantir aderência aos padrões definidos para o projeto.
+
+Todo código sugerido pela IA passa por análise, revisão técnica, execução dos testes e validação das evidências antes de ser considerado concluído.
+
+## Componentes de IA
+
+| Recurso | Objetivo |
+|---------|----------|
+| **Repository Instructions** | Define as regras permanentes da arquitetura, boas práticas e padrões do framework. |
+| **QA Automation Engineer Agent** | Atua como especialista no framework, propondo implementações alinhadas à arquitetura existente. |
+| **Prompt de análise de requisitos** | Analisa requisitos, identifica impactos, oportunidades de reutilização e define um plano antes da implementação. |
+| **Prompt de criação de automação** | Orienta a implementação, execução dos testes e validação dos resultados seguindo os padrões do framework. |
+
+## Fluxo de desenvolvimento com IA
+
+```text
+Requisito
+      │
+      ▼
+Análise do requisito
+      │
+      ▼
+QA Automation Engineer Agent
+      │
+      ▼
+Identificação de reutilização
+      │
+      ▼
+Plano de implementação
+      │
+      ▼
+Aprovação humana
+      │
+      ▼
+Implementação
+      │
+      ▼
+Execução dos testes
+      │
+      ▼
+Validação do Allure
+      │
+      ▼
+Revisão técnica
+      │
+      ▼
+Commit e Push
+```
+
+> **Importante:** A Inteligência Artificial é utilizada como apoio ao desenvolvimento. Todas as sugestões são revisadas, validadas e aprovadas manualmente antes de integrarem o framework.
 
 # 📁 Estrutura do Projeto
 

@@ -116,6 +116,13 @@ public class MyInfoPage {
         myInfoComponent.campoOtherId.sendKeys(Keys.TAB);
     }
 
+    public boolean botaoSaveEstaHabilitado() {
+        waitUtils.aguardarElementoClicavel(
+                myInfoComponent.botaoSave);
+
+        return myInfoComponent.botaoSave.isEnabled();
+    }
+
     public void clicarSalvar() {
         waitUtils.aguardarCarregamentoFinalizar();
 

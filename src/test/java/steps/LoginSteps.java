@@ -32,5 +32,8 @@ public class LoginSteps {
     Assert.assertTrue(
             "Tela inicial não foi exibida.",
             loginPage.telaInicialFoiExibida());
+
+            EvidenceUtils.capturarScreenshot(
+            "01 - Dashboard exibida após login");
 }
 }

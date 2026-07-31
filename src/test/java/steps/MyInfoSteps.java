@@ -129,6 +129,20 @@ public class MyInfoSteps {
                 myInfoPage.clicarSalvar();
         }
 
+        @Then("o botão {string} deve estar habilitado")
+        public void o_botao_deve_estar_habilitado(String nomeBotao) {
+                myInfoPage = new MyInfoPage(
+                                DriverManager.getDriver());
+
+                Assert.assertTrue(
+                                "O botão '" + nomeBotao + "' não está habilitado.",
+                                myInfoPage.botaoSaveEstaHabilitado());
+
+                EvidenceUtils.capturarScreenshot(
+                "05 - Botão Salvar habilitado"
+    );
+        }
+
         @Then("a mensagem de sucesso deve ser exibida")
         public void a_mensagem_de_sucesso_deve_ser_exibida() {
 
