@@ -1,4 +1,4 @@
-@myinfo
+@smoke
 Feature: Disponibilidade da ação de salvar
 
   Como usuário autenticado
