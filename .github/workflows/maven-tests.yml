@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - refactor/organizacao-orangehrm
 
   pull_request:
     branches:
@@ -67,22 +68,34 @@ jobs:
         if: always()
         run: allure generate allure-results --clean -o allure-report
 
-      - name: Configurar GitHub Pages
+      - name: Salvar relatórios e evidências
         if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-evidencias-${{ github.run_number }}
+          path: |
+            allure-results/
+            allure-report/
+            target/surefire-reports/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Configurar GitHub Pages
+        if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: actions/configure-pages@v5
 
       - name: Upload GitHub Pages Artifact
-        if: always()
+        if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: allure-report
 
       - name: Publicar relatório no GitHub Pages
-        if: always()
+        if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: actions/deploy-pages@v4
 
       - name: Falhar pipeline se os testes falharem
-        if: steps.executar-testes.outcome == 'failure'
+        if: ${{ always() && steps.executar-testes.outcome == 'failure' }}
         run: |
-          echo "Os testes falharam. O relatório Allure foi publicado para análise."
+          echo "Os testes falharam. Consulte os logs e os artefatos disponíveis."
           exit 1
