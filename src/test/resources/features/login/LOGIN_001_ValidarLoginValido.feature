@@ -1,6 +1,4 @@
-
-@smoke
-
+@login @smoke @regression @LOGIN_001
 Feature: Login
 
   Scenario: Realizar login com credenciais válidas

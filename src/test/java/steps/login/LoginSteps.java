@@ -1,29 +1,33 @@
-package steps;
+package steps.login;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import pages.login.LoginPage;
+import pages.dashboard.DashboardPage;
 import io.cucumber.java.en.Then;
-
-import pages.LoginPage;
 import utils.ConfigReader;
 import utils.DriverManager;
 import org.junit.Assert;
 import utils.EvidenceUtils;
 
+
+
 public class LoginSteps {
 
     private LoginPage loginPage;
+    private DashboardPage dashboardPage;
 
     @Given("que estou na página de login do OrangeHRM")
     public void que_estou_na_pagina_de_login_do_orange_hrm() {
         loginPage = new LoginPage(DriverManager.getDriver());
+        dashboardPage = new DashboardPage(DriverManager.getDriver());
     }
 
     @When("realizo login com credenciais válidas")
     public void realizo_login_com_credenciais_validas() {
-        loginPage.informarUsername(ConfigReader.getUsername());
-        loginPage.informarPassword(ConfigReader.getPassword());
-        loginPage.clicarLogin();
+        loginPage.preencherUsuario(ConfigReader.getUsername());
+        loginPage.preencherSenha(ConfigReader.getPassword());
+        loginPage.clicarBotaoLogin();
     }
 
     @Then("devo ser redirecionado para a tela inicial")
@@ -31,7 +35,7 @@ public class LoginSteps {
 
     Assert.assertTrue(
             "Tela inicial não foi exibida.",
-            loginPage.telaInicialFoiExibida());
+            dashboardPage.dashboardEstaVisivel());
 
             EvidenceUtils.capturarScreenshot(
             "01 - Dashboard exibida após login");

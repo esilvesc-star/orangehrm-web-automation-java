@@ -1,4 +1,10 @@
+@myinfo
 @smoke
+@regressao
+@critico
+@positivo
+@teste
+
 Feature: Acesso ao módulo My Info
 
   Como usuário autenticado

@@ -13,7 +13,7 @@ public class MyInfoComponent {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//h6[normalize-space()='Personal Details' or normalize-space()='Datos Personales']")
+    @FindBy(css = "h6.oxd-text.oxd-text--h6.orangehrm-main-title")
     public WebElement tituloPersonalDetails;
 
     @FindBy(xpath = "//label[normalize-space()='Other Id']/parent::div/following-sibling::div//input")

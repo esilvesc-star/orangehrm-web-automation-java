@@ -9,9 +9,9 @@ import io.cucumber.java.en.When;
 
 import org.junit.Assert;
 
-import pages.DashboardPage;
-import pages.LoginPage;
 import pages.MyInfoPage;
+import pages.dashboard.DashboardPage;
+import pages.login.LoginPage;
 import utils.ConfigReader;
 import utils.DriverManager;
 import utils.EvidenceUtils;
@@ -36,9 +36,9 @@ public class MyInfoSteps {
         public void que_realizei_login_com_credenciais_validas() {
                 loginPage = new LoginPage(DriverManager.getDriver());
 
-                loginPage.informarUsername(ConfigReader.getUsername());
-                loginPage.informarPassword(ConfigReader.getPassword());
-                loginPage.clicarLogin();
+                loginPage.preencherUsuario(ConfigReader.getUsername());
+                loginPage.preencherSenha(ConfigReader.getPassword());
+                loginPage.clicarBotaoLogin();
         }
 
         // ======================================================
