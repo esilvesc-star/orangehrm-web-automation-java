@@ -18,6 +18,7 @@
         <junit.version>4.13.2</junit.version>
         <webdrivermanager.version>5.9.2</webdrivermanager.version>
         <allure.version>2.29.0</allure.version>
+        <gson.version>2.14.0</gson.version>
 
         <maven.compiler.version>3.13.0</maven.compiler.version>
         <maven.surefire.version>3.3.1</maven.surefire.version>
@@ -65,6 +66,14 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber7-jvm</artifactId>
             <version>${allure.version}</version>
+        </dependency>
+
+        <!-- Gson: leitura das massas de dados em JSON -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

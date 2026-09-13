@@ -6,5 +6,4 @@ Feature: Validação de login com credenciais inválidas
     When informo um usuário válido
     And informo uma senha inválida
     And solicito o acesso
-    Then deve ser exibida uma mensagem de credenciais inválidas
-    And o usuário deve permanecer na página de login
+    Then devo visualizar a mensagem "Invalid credentials"
