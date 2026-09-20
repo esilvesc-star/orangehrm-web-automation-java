@@ -49,6 +49,21 @@ public class LoginSteps {
         loginPage.preencherSenha(senhaInvalida);
     }
 
+    @When("informo um usuário inválido")
+    public void informo_um_usuario_invalido() {
+        String usuarioInvalido = JsonDataReader.obterValor(
+            "data/login/usuarios.json",
+            "usuarioInvalido",
+            "username");
+
+        loginPage.preencherUsuario(usuarioInvalido);
+    }
+
+    @When("informo uma senha válida")
+    public void informo_uma_senha_valida() {
+        loginPage.preencherSenha(ConfigReader.getPassword());
+    }
+
     @When("solicito o acesso")
     public void solicito_o_acesso() {
         loginPage.clicarBotaoLogin();
