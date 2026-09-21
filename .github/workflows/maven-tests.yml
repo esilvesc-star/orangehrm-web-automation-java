@@ -43,7 +43,7 @@ jobs:
       - name: Executar testes Smoke
         id: executar-testes
         continue-on-error: true
-        run: mvn clean test -Denv=qa -Dcucumber.filter.tags="@smoke"
+        run: mvn clean test -Denv=qa -Dcucumber.filter.tags="@smoke or @login"
 
       - name: Validar geração do allure-results
         if: always()
